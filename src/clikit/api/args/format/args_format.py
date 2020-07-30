@@ -20,7 +20,7 @@ class ArgsFormat(object):
 
     def __init__(
         self, elements=None, base_format=None
-    ):  # type: (Optional[Union[List[Any], ArgsFormatBuilder]], Optional[ArgsFormat])
+    ):  # type: (Optional[Union[List[Any], ArgsFormatBuilder]], Optional[ArgsFormat]) -> None
         from .args_format_builder import ArgsFormatBuilder
 
         if elements is None:

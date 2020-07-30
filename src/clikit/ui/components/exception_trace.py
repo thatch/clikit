@@ -3,6 +3,7 @@ import inspect
 import keyword
 import sys
 import traceback
+from typing import Any
 
 from clikit.api.io import IO
 from clikit.utils._compat import PY2
@@ -57,7 +58,7 @@ class ExceptionTrace(object):
             io.write_line("")
             self._render_traceback(io, tb)
 
-    def _render_traceback(self, io, tb):  # type: (IO, ...) -> None
+    def _render_traceback(self, io, tb):  # type: (IO, Any) -> None
         frames = []
         while tb:
             frames.append(self._format_traceback_frame(io, tb))
@@ -67,7 +68,7 @@ class ExceptionTrace(object):
         io.write_line("<b>Traceback (most recent call last):</b>")
         io.write_line("".join(traceback.format_list(frames)))
 
-    def _format_traceback_frame(self, io, tb):  # type: (IO, ...) -> Tuple[Any]
+    def _format_traceback_frame(self, io, tb):  # type: (IO, Any) -> Tuple[Any]
         frame_info = inspect.getframeinfo(tb)
         filename = frame_info.filename
         lineno = frame_info.lineno

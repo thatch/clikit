@@ -10,7 +10,7 @@ class HelpResolver(DefaultResolver):
     A command resolver used by a help handler.
     """
 
-    def __init__(self, help_command_name="help"):  # type: (str) -> None:
+    def __init__(self, help_command_name="help"):  # type: (str) -> None
         self._help_command_name = help_command_name
 
     def resolve(

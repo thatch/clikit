@@ -15,7 +15,7 @@ class AnsiFormatter(Formatter):
     A formatter that replaces style tags by ANSI format codes.
     """
 
-    def __init__(self, style_set=None, forced=False):  # type: (StyleSet) -> None
+    def __init__(self, style_set=None, forced=False):  # type: (StyleSet, bool) -> None
         self._formatter = Pastel(True)
         self._forced = forced
 

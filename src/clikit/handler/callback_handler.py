@@ -1,4 +1,4 @@
-from typing import Callable
+from typing import Any, Callable
 
 from clikit.api.args import Args
 from clikit.api.io import IO
@@ -12,5 +12,5 @@ class CallbackHandler:
     def __init__(self, callback):  # type: (Callable) -> None
         self._calllback = callback
 
-    def handle(self, args, io, _):  # type: (Args, IO, ...) -> int
+    def handle(self, args, io, _):  # type: (Args, IO, Any) -> int
         return self._calllback(args, io)
